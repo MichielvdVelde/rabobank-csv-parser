@@ -1,0 +1,22 @@
+{
+  "name": "rabobank-csv-parser",
+  "version": "0.0.1",
+  "author": "Michiel van der Velde <michiel@michielvdvelde.nl>",
+  "homepage": "https://github.com/MichielvdVelde/rabobank-csv-parser",
+  "license": "MIT",
+  "keywords": [
+    "rabobank",
+    "csv",
+    "parser",
+    "stream",
+    "transaction",
+    "download"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichielvdVelde/rabobank-csv-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MichielvdVelde/rabobank-csv-parser/issues"
+  }
+}
