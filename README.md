@@ -4,7 +4,7 @@
 
 I built this module to parse my bank's CSV transaction files.
 
-[The file format is layd out here](https://www.rabobank.nl/images/formaatbeschrijving_csv_kommagescheiden_nieuw_29539176.pdf).
+[The file format is laid out here](https://www.rabobank.nl/images/formaatbeschrijving_csv_kommagescheiden_nieuw_29539176.pdf) (Dutch).
 I have no idea if this format enjoys any kind of universality, though...
 
 ## Install
@@ -27,16 +27,17 @@ const RaboCSVParser = require('rabobank-csv-parser')
 const csvParser = CSVStreamify()
 const raboParser = new RaboCSVParser()
 
-// A 'data' event is emitted for each row
+// A `data` event is emitted for each row
 raboParser.on('data', function (row) {
+  // `data` is a Buffer, so we first convert it to JSON
   row = JSON.parse(row.toString())
 
-  // Just display the row
+  // Do what you want with it - displaying it, for example
   console.log(row)
 })
 
 // Pipe a file stream through csv-streamify and then this module
-fs.createReadStream('../../transactions.txt').pipe(csvParser).pipe(raboParser)
+fs.createReadStream('transactions.txt').pipe(csvParser).pipe(raboParser)
 ```
 
 ### Example output
@@ -48,12 +49,12 @@ The data in this example output has been faked (obviously). The ouput is a singl
 {
   "account_iban": "NL08RABO2952747327",
   "currency": "EUR",
-  "interest_date": "2017-03-09T03:00:00.000Z",
+  "interest_date": "2017-03-09",
   "credit_or_debit": "D",
   "amount": 100,
   "counter_iban": "NL08RABO2952747327",
   "counter_name": "",
-  "date": "2017-03-010T20:00:00.000Z",
+  "date": "2017-03-09",
   "code": "",
   "filler": "",
   "desc1": "Afschrijving",
@@ -67,6 +68,11 @@ The data in this example output has been faked (obviously). The ouput is a singl
   "mandate_id": ""
 }
 ```
+
+### Changelog
+
+* **v0.0.2** (19-03-2017)
+  * Dates are now in format YYYY-MM-DD instead of a `Date` object
 
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
