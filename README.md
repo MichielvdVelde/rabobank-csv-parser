@@ -71,7 +71,7 @@ The data in this example output has been faked (obviously). The ouput is a singl
 
 ### Changelog
 
-* **v0.0.2** (19-03-2017)
+* **v0.0.3** (19-03-2017)
   * Dates are now in format YYYY-MM-DD instead of a `Date` object
 
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)

@@ -39,7 +39,7 @@ class RaboCSVParser extends Transform {
         case 'interest_date':
         case 'date':
           const date = [ value.substr(0, 4), value.substr(4, 2), value.substr(6) ]
-          value = date.reverse().join('-')
+          value = date.join('-')
           break
         case 'amount':
           value = parseFloat(value)

@@ -1,6 +1,6 @@
 {
   "name": "rabobank-csv-parser",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Michiel van der Velde <michiel@michielvdvelde.nl>",
   "homepage": "https://github.com/MichielvdVelde/rabobank-csv-parser",
   "license": "MIT",
